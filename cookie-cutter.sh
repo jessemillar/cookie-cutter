@@ -12,6 +12,7 @@ WALLPAPER_COLOR=$6
 MASK_WIDTH="$(convert $MASK -ping -format "%w" info:)"
 MASK_HEIGHT="$(convert $MASK -ping -format "%h" info:)"
 IMAGE_HEIGHT="$(convert $IMAGE -ping -format "%h" info:)"
+IMAGE_WIDTH="$(convert $IMAGE -ping -format "%w" info:)"
 
 # Variables for temporary names
 TEMP_IMAGE="temp_image.png"
@@ -21,7 +22,13 @@ TEMP_WALLPAPER="temp_wallpaper.png"
 # Check for image size issues
 if [ $IMAGE_HEIGHT -lt $MASK_HEIGHT ]
 then
-	echo "Warning: Image is too small, proceeding anyway, but result may be blurry"
+	echo "Warning: Image is shorter than mask, proceeding anyway, but result may be blurry"
+fi
+
+# Check for image size issues
+if [ $IMAGE_WIDTH -lt $MASK_WIDTH ]
+then
+	echo "Warning: Image is thinner than mask, proceeding anyway, but result may be blurry"
 fi
 
 # Build the wallpaper if needed
