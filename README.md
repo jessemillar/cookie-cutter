@@ -6,6 +6,8 @@
 > The script will find the image's average color and apply that to the background if no background color is supplied. If no width, height, or color is passed, the result with have a transparent background and the same dimensions as the mask.
 
 ## Example
+> See the [example directory](https://github.com/jessemillar/cookie-cutter/tree/master/example) for examples of valid files.
+
 ```
 ./cookie-cutter.sh example/star.png example/background.jpg example/icon.png
 ```
