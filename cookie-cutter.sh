@@ -47,7 +47,7 @@ then
 fi
 
 echo "Info: Scaling image"
-convert $IMAGE -geometry x${MASK_HEIGHT} $TEMP_IMAGE # Scale the image to better match the mask height
+convert $IMAGE -geometry ${MASK_WIDTH}x${MASK_HEIGHT}^ $TEMP_IMAGE # Scale the image to better match the mask height
 echo "Info: Applying mask to image"
 composite -compose Dst_In -gravity center $MASK $TEMP_IMAGE -alpha Set $TEMP_MASK # Apply the mask
 echo "Info: Cropping resulting image to mask size"
