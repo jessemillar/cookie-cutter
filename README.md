@@ -1,6 +1,4 @@
 ## Usage
-> Works best with landscape photos.
-
 ```
 ./cookie-cutter.sh mask.png image.jpg result.png [resultWidth (optional)] [resultHeight (optional)] [resultBackgroundColor (optional)]
 ```
