@@ -19,6 +19,8 @@ TEMP_IMAGE="temp_image.png"
 TEMP_MASK="temp_mask.png"
 TEMP_WALLPAPER="temp_wallpaper.png"
 
+echo "Info: Processing" $IMAGE
+
 # Check for image size issues
 if [ $IMAGE_HEIGHT -lt $MASK_HEIGHT ]
 then
